@@ -16,9 +16,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-
-from Tutorial1 import views
+import Tutorial1.views
+import Tutorial2.views
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
+    url(r'^$', Tutorial1.views.index, name='index'),
+    url(r'^questions$', Tutorial2.views.view_questions, name="view_questions"),
+    url(r'^questions/add$', Tutorial2.views.add_question, name="add_question"),
 ]
+

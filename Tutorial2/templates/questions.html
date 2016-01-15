@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Questions</title>
+</head>
+
+<body>
+	<!-- #1 -->
+	<form action="/questions/add" method="post">
+		<input type="text" name="question_text"/>
+		<!--  #2 -->
+		{% csrf_token %}
+	</form>
+
+	<ol>
+		<!-- #1 -->
+		{% for question in questions %}
+			<!-- #2 --> 
+	    	<li>{{ question.question_text }}</li>
+		{% endfor %}
+	</ol>
+</body>
+</html>
